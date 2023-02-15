@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('add-blog');
     }
 
     /**
@@ -31,7 +31,14 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content
+        ]);
+
+        return response('Inserting Done...');
+
+        
     }
 
     /**
