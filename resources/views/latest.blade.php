@@ -50,7 +50,7 @@
     <div class="container mx-auto px-4 py-16">
         <div class="text-4xl font-mono font-extrabold underline decoration-sky-500/30 subpixel-antialiased flex items-center">
             <span class="text-yellow-600">#</span>
-            <h1 class="text-sky-400 ">Feed: aiBLOG</h1>
+            <h1 class="text-sky-400 ">Latest: aiBLOG</h1>
         </div>
         <div class="flex justify-center items-center flex-wrap">
             <!-- component -->
@@ -61,20 +61,14 @@
                     <div class="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
                     <div class="flex items-center">
                         <h2 class="text-xl text-gray-800 font-medium mr-auto">{{ $post->title }}</h2>
-                        {{-- <p class="text-gray-800 font-semibold tracking-tighter">
-                            only
-                            <i class="text-gray-600 line-through">60$</i>
-                            48$
-                        </p> --}}
                     </div>
                     <p class="text-sm text-gray-700 mt-4">
                         {{ $post->content }}
                     </p>
-                    {{-- <div class="flex items-center justify-end mt-4 top-auto">
+                    <div class="flex items-center justify-end mt-4 top-auto">
                         <button class="bg-white text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</button>
                         <button class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">Edit</button>
-                        <button class=" bg-blue-600 text-gray-200 px-2 py-2 rounded-md ">Publish</button>
-                    </div> --}}
+                    </div>
                     </div>
                     </div>
                 @endforeach

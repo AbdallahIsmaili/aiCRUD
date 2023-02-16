@@ -73,4 +73,9 @@ class PostController extends Controller
     {
         //
     }
+
+    public function latest(){
+        $posts = Post::get();
+        return view('latest', compact('posts'));
+    }
 }
