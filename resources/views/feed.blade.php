@@ -42,8 +42,7 @@
 				</svg>
 			</li>
 	    </ul>
-		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold transition duration-200" href="#">Search</a>
-		<a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bol transition duration-200" href="#">Add a blog</a>
+		<a class=" lg:inlizne-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bol transition duration-200" href="{{ route('posts.create') }}">Add your post</a>
 	</nav>
 
 
@@ -56,27 +55,30 @@
         <div class="flex justify-center items-center flex-wrap">
             <!-- component -->
             <!-- item card -->
-            <div class="flex shadow-lg my-4 h-64">
-                <img class="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" src="https://ik.imagekit.io/q5edmtudmz/FB_IMG_15658659197157667_wOd8n5yFyXI.jpg" alt="bag">
-                <div class="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
-                <div class="flex items-center">
-                    <h2 class="text-xl text-gray-800 font-medium mr-auto">Your Travel Buddy</h2>
-                    <p class="text-gray-800 font-semibold tracking-tighter">
-                        only
-                        <i class="text-gray-600 line-through">60$</i>
-                        48$
+                @foreach ($posts as $post)
+                    <div class="flex shadow-lg my-4 h-64">
+                    <img class="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" src="https://ik.imagekit.io/q5edmtudmz/FB_IMG_15658659197157667_wOd8n5yFyXI.jpg" alt="bag">
+                    <div class="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
+                    <div class="flex items-center">
+                        <h2 class="text-xl text-gray-800 font-medium mr-auto">{{ $post->title }}</h2>
+                        {{-- <p class="text-gray-800 font-semibold tracking-tighter">
+                            only
+                            <i class="text-gray-600 line-through">60$</i>
+                            48$
+                        </p> --}}
+                    </div>
+                    <p class="text-sm text-gray-700 mt-4">
+                        {{ $post->content }}
                     </p>
-                </div>
-                <p class="text-sm text-gray-700 mt-4">
-                    Lorem, ipsum dolor sit amet consectetur Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequ adipisicing elit. Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequi.
-                </p>
-                {{-- <div class="flex items-center justify-end mt-4 top-auto">
-                    <button class="bg-white text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</button>
-                    <button class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">Edit</button>
-                    <button class=" bg-blue-600 text-gray-200 px-2 py-2 rounded-md ">Publish</button>
-                </div> --}}
-                </div>
-            </div>
+                    {{-- <div class="flex items-center justify-end mt-4 top-auto">
+                        <button class="bg-white text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</button>
+                        <button class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">Edit</button>
+                        <button class=" bg-blue-600 text-gray-200 px-2 py-2 rounded-md ">Publish</button>
+                    </div> --}}
+                    </div>
+                    </div>
+                @endforeach
+            
 
         </div>
     </div>
