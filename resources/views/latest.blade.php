@@ -67,7 +67,7 @@
                     </p>
                     <div class="flex items-center justify-end mt-4 top-auto">
                         <button class="bg-white text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</button>
-                        <button class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">Edit</button>
+                        <a href="{{ route('posts.edit', $post->id) }}" class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">Edit</a>
                     </div>
                     </div>
                     </div>
