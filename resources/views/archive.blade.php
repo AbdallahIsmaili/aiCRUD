@@ -67,9 +67,9 @@
                     </p>
                     <div class="flex items-center justify-end mt-4 top-auto">
 
-                        <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                        <form action="{{ route('posts.delete', $post->id) }}" method="post">
                             @csrf
-                            @method('DELETE')
+                            @method('GET')
                             <button type="submit" class="bg-white text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</button>
                         </form>
 
