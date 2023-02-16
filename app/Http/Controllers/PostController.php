@@ -45,9 +45,10 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show()
     {
-        //
+        $posts = Post::onlyTrashed()->get();
+        return view('archive', compact('posts'));
     }
 
     /**
@@ -77,13 +78,20 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        Post::findorFail($id)->delete();
+
+        return redirect()->route('posts.index');
     }
 
     public function latest(){
         $posts = Post::get();
         return view('latest', compact('posts'));
+    }
+
+    public function restore($id){
+        $post = Post::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->back();
     }
 }

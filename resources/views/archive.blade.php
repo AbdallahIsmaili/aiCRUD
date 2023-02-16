@@ -50,7 +50,7 @@
     <div class="container mx-auto px-4 py-16">
         <div class="text-4xl font-mono font-extrabold underline decoration-sky-500/30 subpixel-antialiased flex items-center">
             <span class="text-yellow-600">#</span>
-            <h1 class="text-sky-400 ">Latest: aiBLOG</h1>
+            <h1 class="text-sky-400 ">Archive(soft deleted post): aiBLOG</h1>
         </div>
         <div class="flex justify-center items-center flex-wrap">
             <!-- component -->
@@ -74,6 +74,8 @@
                         </form>
 
                         <a href="{{ route('posts.edit', $post->id) }}" class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">Edit</a>
+                        
+                        <a href="{{ route('posts.restore', $post->id) }}" class=" bg-green-500 text-blue-100 px-2 py-2 rounded-md mr-2">restore</a>
                     </div>
                     </div>
                     </div>

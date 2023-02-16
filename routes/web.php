@@ -20,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('posts', PostController::class);
 Route::get('latest', [PostController::class, 'latest'])->name('posts.latest');
+Route::get('posts/restore/{id}', [PostController::class, 'restore'])->name('posts.restore');
+Route::get('posts/forcedelete/{id}', [PostController::class, 'forceDelete'])->name('posts.delete');
